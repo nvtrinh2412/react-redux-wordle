@@ -1,0 +1,21 @@
+@import "../../common/variable.scss";
+
+.row {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.letter-row {
+  display: flex;
+  align-items: center;
+}
+span {
+  background-color: grey;
+  color: white;
+  font-weight: $fontBold;
+  font-size: $fontMd;
+  margin: 0.25em;
+  border-radius: 4px;
+  padding: 0.25em;
+  cursor: pointer;
+}

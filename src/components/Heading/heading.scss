@@ -1,0 +1,13 @@
+@import "../../common/variable.scss";
+
+.heading-h1 {
+  font-size: $fontXlg;
+  text-align: center;
+  font-weight: $fontSemibold;
+}
+.heading-subtitle {
+  color: white;
+  font-size: $fontMd;
+  text-align: center;
+  font-weight: $fontSemibold;
+}

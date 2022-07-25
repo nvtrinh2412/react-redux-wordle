@@ -1,0 +1,12 @@
+@import "../../../common/variable.scss";
+
+.letter{
+  background-color: grey;
+  color: white;
+  font-weight: $fontBold;
+  font-size: $fontMd;
+  margin: 0.25rem;
+  border-radius: 4px;
+  padding: 0.35em;
+  cursor: pointer;
+}

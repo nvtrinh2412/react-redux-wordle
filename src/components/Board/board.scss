@@ -1,0 +1,15 @@
+@import "../../common/variable.scss";
+
+
+.board{
+  color: white;
+  height: 300px;
+  width: 300px;
+  align-self: center;
+  justify-self: center;
+  background-color: $colorDarkGreen;
+  display: grid;
+  column-gap: 0.25rem;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 2em;
+}

@@ -1,0 +1,11 @@
+@import "../../../common/variable.scss";
+
+.square{
+  font-size: 2rem;
+  height: 48px;
+  width: 48px;
+  text-align: center;
+  border: 2px solid $colorLightBlue;
+  cursor: pointer;
+  place-items: center;
+}
