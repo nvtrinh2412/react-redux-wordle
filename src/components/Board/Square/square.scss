@@ -1,6 +1,6 @@
-@import "../../../common/variable.scss";
+@import '../../../common/variable.scss';
 
-.square{
+.square {
   font-size: 2rem;
   height: 48px;
   width: 48px;
@@ -10,20 +10,19 @@
   place-items: center;
 }
 
-#correct{
+#correct {
   border: none;
-  background-color: rgb(3,164,100);
+  background-color: rgb(3, 164, 100);
   animation: flip 1s linear;
 }
-#almost{
+#almost {
   border: none;
-  background-color: rgb(255,213,0);
+  background-color: rgb(255, 213, 0);
   animation: flip 1s linear;
-
 }
-#wrong{
+#wrong {
   border: none;
-  background-color: rgb(72,72,72);
+  background-color: rgb(72, 72, 72);
   animation: flip 1s linear;
 }
 
@@ -31,7 +30,7 @@
   0% {
     transform: rotateX(0);
   }
-  100%{
+  100% {
     transform: rotateX(360deg);
   }
 }

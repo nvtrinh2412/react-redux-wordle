@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
-import "./square.scss";
-import { motion } from "framer-motion";
-import { useSelector } from "react-redux";
-import { rootState } from "../../../common/interface";
+import React, { useEffect, useState } from 'react';
+import './square.scss';
+import { motion } from 'framer-motion';
+import { useSelector } from 'react-redux';
+import { rootState } from '../../../common/interface';
 interface IProps {
   val: string;
   squareIdx: number;
 }
+const ITEMS_PER_ROW = 5;
 const Square: React.FC<IProps> = (props) => {
   const { val, squareIdx } = props;
 
@@ -14,17 +15,13 @@ const Square: React.FC<IProps> = (props) => {
   const [almost, setAlmost] = useState<boolean>(false);
   const [wrong, setWrong] = useState<boolean>(false);
 
-  const correctWord = useSelector(
-    (state: rootState) => state.board.correctWord
-  );
-  const currentReduxPosition = useSelector(
-    (state: rootState) => state.board.position
-  );
+  const correctWord = useSelector((state: rootState) => state.board.correctWord);
+  const currentReduxPosition = useSelector((state: rootState) => state.board.position);
   const reduxRow = useSelector((state: rootState) => state.board.row);
 
-  const currentRow = Math.floor((squareIdx) / 5);
+  const currentRow = Math.floor(squareIdx / ITEMS_PER_ROW);
 
-  const currentPosition = (currentReduxPosition - 1) % 5; // position in current row
+  const currentPosition = (currentReduxPosition - 1) % ITEMS_PER_ROW; // position in current row
 
   const variants = {
     filled: () => ({
@@ -41,16 +38,13 @@ const Square: React.FC<IProps> = (props) => {
     }),
   };
   useEffect(() => {
-    console.log("correct: " + correctWord);
-    console.log(currentPosition);
     if (correctWord[currentPosition] === val) {
       setCorrect(true);
-      console.log("true");
-    } else if (!correct && val !== "" && correctWord.includes(val)) {
+      console.log('true');
+    } else if (!correct && val !== '' && correctWord.includes(val)) {
       setAlmost(true);
-      console.log("almost");
-
-    } else if (!correct && val !== "" && !correctWord.includes(val)) {
+      console.log('almost');
+    } else if (!correct && val !== '' && !correctWord.includes(val)) {
       setWrong(true);
     }
     return () => {
@@ -59,11 +53,9 @@ const Square: React.FC<IProps> = (props) => {
       setWrong(false);
     };
   }, [val]);
-  const status: any =
-    reduxRow > currentRow &&
-    (correct ? "correct" : almost ? "almost" : wrong ? "wrong" : "");
+  const status: any = reduxRow > currentRow && (correct ? 'correct' : almost ? 'almost' : wrong ? 'wrong' : '');
   return (
-    <motion.div animate={val ? "filled" : "unfilled"} variants={variants}>
+    <motion.div animate={val ? 'filled' : 'unfilled'} variants={variants}>
       <div className="square" id={status}>
         {val}
       </div>

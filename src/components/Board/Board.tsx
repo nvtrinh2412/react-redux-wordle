@@ -1,24 +1,24 @@
-import React from "react";
-import Square from "./Square/Square";
-import "./board.scss"
+import React from 'react';
+import Square from './Square/Square';
+import './board.scss';
 interface IProps {
   board: string[];
 }
 const Board: React.FC<IProps> = (props) => {
-  const {board} = props;
+  const { board } = props;
   return (
     <>
-    <div className="board">
-      {board.map((square,idx)=>{
-        return(
-          <>
-          <Square val = {square} squareIdx = {idx} />
-          </>
-        )
-      })}
-    </div>
+      <div className="board">
+        {board.map((square, idx) => {
+          return (
+            <>
+              <Square val={square} squareIdx={idx} />
+            </>
+          );
+        })}
+      </div>
     </>
-  )
+  );
 };
 
 export default Board;
